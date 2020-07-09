@@ -1,0 +1,24 @@
+FUNCTION pal(str,i,j) : BOOLEAN
+VAR
+    isp:true;
+BEGIN
+    if(str[i]!=str[j]&&i>j)
+        isp:=false;
+    ELSE
+        pal(str,i+1,j-1)
+    END_IF
+    RETURN isp ;
+END
+ALGORITHM palendrome
+VAR
+    str:STRING;
+    i:INTEGER:=0;
+    j:INTEGER;
+BEGIN
+    j:=str.length-1;
+    IF (pal(str,i,j)) THEN
+        write('is palendrome')
+    ELSE
+        write('is not palendrome')
+    END_IF 
+END
